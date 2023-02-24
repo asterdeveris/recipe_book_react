@@ -1,0 +1,152 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+  color: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*--------------------*/
+
+body {
+  height: 100vh;
+  background-color: #eee1d1;
+  color: #173c34;
+  font-family: "Raleway", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  scroll-behavior: smooth;
+}
+
+body::after {
+  position: absolute;
+  height: 350px;
+  width: 350px;
+  right: 0px;
+  bottom: 5px;
+  background-image: url(../../img/penne-pasta-with-bolognese-sauce-parmesan-cheese-basil-removebg-preview.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  content: "";
+}
+
+body::before {
+  z-index: -1;
+  position: absolute;
+  height: 700px;
+  width: 700px;
+  left: -380px;
+  top: -150px;
+  rotate: 180deg;
+  filter: blur(2px);
+  background-image: url(../../img/e5bcec3d-a4a9-40a8-8688-a8c3c490a2d1.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  content: "";
+}
+
+#root {
+  width: 80%;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #2a635e;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #173c34;
+}

@@ -1,0 +1,25 @@
+.list-of-recepes {
+  background-color: #2a635e;
+  border-radius: 15px;
+  padding: 25px;
+  margin-bottom: 15px;
+  color: white;
+  line-height: 1.5rem;
+  height: 150px;
+}
+.list-of-recepes ul {
+  overflow-y: scroll;
+  max-height: 70%;
+}
+.list-of-recepes ul li {
+  cursor: pointer;
+  transition-duration: 400ms;
+  transition-timing-function: ease-out;
+}
+.list-of-recepes ul li:hover {
+  -webkit-text-decoration: underline #f86d46;
+  text-decoration: underline #f86d46;
+  text-underline-offset: 4px;
+  padding: 4px 0;
+  font-size: larger;
+}
