@@ -3,7 +3,18 @@ import "./recipe-details.css";
 import Form from "../form/form";
 
 export default function RecipeDetails({ chosenRecipe }) {
-  const [openForm, setOpenForm] = useState(false);
+  const [formPurpose, setFormPurpose] = useState("");
+  const [formOpened, setFormOpened] = useState(false);
+
+  const openForm = (purpose) => {
+    setFormPurpose(purpose);
+    setFormOpened(true);
+  };
+
+  const closeForm = () => {
+    setFormOpened(false);
+  };
+
   let ingridients;
   let directions;
   if (chosenRecipe.length === 0) {
@@ -26,10 +37,15 @@ export default function RecipeDetails({ chosenRecipe }) {
           <button id="delete">
             <i className="fa-regular fa-trash-can"></i>
           </button>
-          <button id="edit">
+          <button
+            id="edit"
+            onClick={() => {
+              openForm("Edit");
+            }}
+          >
             <i className="fa-regular fa-pen-to-square"></i>
           </button>
-          <button id="add" onClick={() => setOpenForm(true)}>
+          <button id="add" onClick={() => openForm("Add")}>
             <i className="fa-regular fa-square-plus"></i>
           </button>
         </div>
@@ -42,7 +58,12 @@ export default function RecipeDetails({ chosenRecipe }) {
           {directions}
         </ol>
       </div>
-      <Form isOpen={openForm} />
+      <Form
+        isOpen={formOpened}
+        purpose={formPurpose}
+        chosenRecipe={chosenRecipe}
+        closeForm={closeForm}
+      />
     </div>
   );
 }

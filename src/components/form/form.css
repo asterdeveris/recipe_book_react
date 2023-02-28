@@ -12,6 +12,7 @@
   background-color: #eee1d1;
   box-shadow: -1px -1px 41px -11px rgb(23, 60, 52);
   max-height: 70vh;
+  color: #173c34;
 }
 .form label {
   margin-bottom: 10px;
@@ -33,6 +34,7 @@
 .form .form-header .close-button {
   display: flex;
   align-items: flex-start;
+  cursor: pointer;
 }
 .form .close {
   background: none;

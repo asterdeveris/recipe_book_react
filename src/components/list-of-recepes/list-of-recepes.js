@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import "./list-of-recepes.css";
 
-function ListOfRecepes({ data, showRecipe }) {
-  const recipes = data.map((recipe, ind) => {
+function ListOfRecepes({ recipesStore, showRecipe }) {
+  const recipes = recipesStore.map((recipe, ind) => {
     return (
       <li onClick={(e) => showRecipe(e)} key={ind}>
         {recipe.name}
       </li>
     );
   });
-
+  console.log(recipes);
   return (
     <div className="list-of-recepes">
       <h2 id="list-of-recepes-header">List of recipes:</h2>
