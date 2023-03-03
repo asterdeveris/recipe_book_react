@@ -7,6 +7,7 @@ export default function RecipeDetails({
   chosenRecipeInd,
   recipesStore,
   addNewRecipe,
+  deleteRecipe,
 }) {
   const [formPurpose, setFormPurpose] = useState("");
   const [formOpened, setFormOpened] = useState(false);
@@ -26,7 +27,6 @@ export default function RecipeDetails({
   if (Object.keys(chosenRecipe).length === 0) {
     ingridients = "";
     directions = "";
-    console.log("here?");
   } else {
     ingridients = chosenRecipe.ingridients.map((ingridient, ind) => {
       return <li key={ind}>{ingridient}</li>;
@@ -36,12 +36,16 @@ export default function RecipeDetails({
     });
   }
 
+  const onDelete = () => {
+    deleteRecipe(chosenRecipeInd);
+  };
+
   return (
     <div className="recipe">
       <div className="recipe-header">
         <h2 className="recipe-header-h">{chosenRecipe.name}</h2>
         <div className="buttons">
-          <button id="delete">
+          <button id="delete" onClick={onDelete}>
             <i className="fa-regular fa-trash-can"></i>
           </button>
           <button

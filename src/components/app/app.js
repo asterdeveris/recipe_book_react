@@ -12,8 +12,9 @@ function App() {
 
   useEffect(() => {
     const recipes = getLocalStorage();
-    if (recipes) {
+    if (recipes.length > 0) {
       setRecipesStore(recipes);
+      setChosenRecipe(recipes[0]);
     }
   }, []);
 
@@ -22,18 +23,30 @@ function App() {
   }, [recipesStore]);
 
   const showRecipe = (recipeName, arrForSearch) => {
-    console.log(arrForSearch);
+    if (recipeName === "") {
+      setChosenRecipe({});
+      return;
+    }
     const recipe = arrForSearch.find((el) => el.name === recipeName);
     const ind = arrForSearch.findIndex((el) => el.name === recipeName);
     setChosenRecipe(recipe);
     setChosenRecipeInd(ind);
-    console.log("work");
   };
 
   const addNewRecipe = (newStore, recipeName) => {
     setRecipesStore(newStore);
     showRecipe(recipeName, newStore);
-    // showRecipe(recipeName);
+  };
+
+  const deleteRecipe = (ind) => {
+    const newStore = [
+      ...recipesStore.slice(0, ind),
+      ...recipesStore.slice(ind + 1),
+    ];
+    setRecipesStore(newStore);
+
+    const recipeName = newStore.length > 0 ? newStore[0].name : "";
+    showRecipe(recipeName, newStore);
   };
 
   return (
@@ -45,6 +58,7 @@ function App() {
         chosenRecipeInd={chosenRecipeInd}
         recipesStore={recipesStore}
         addNewRecipe={addNewRecipe}
+        deleteRecipe={deleteRecipe}
       />
     </div>
   );
