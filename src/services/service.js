@@ -1,11 +1,10 @@
 const setLocalStorage = (arr) => {
-  const recepesStore = localStorage.setItem("recipeStore", JSON.stringify(arr));
-  return recepesStore;
+  localStorage.setItem("recipesStore", JSON.stringify(arr));
 };
 
 const getLocalStorage = () => {
-  const recipesStore = JSON.parse(localStorage.getItem("recipeStore")) || [];
-  return recipesStore;
+  const recipesStorage = JSON.parse(localStorage.getItem("recipesStore")) || [];
+  return recipesStorage;
 };
 
 export { setLocalStorage, getLocalStorage };

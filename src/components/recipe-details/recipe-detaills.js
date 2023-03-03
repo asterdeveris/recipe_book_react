@@ -2,7 +2,12 @@ import React, { useState } from "react";
 import "./recipe-details.css";
 import Form from "../form/form";
 
-export default function RecipeDetails({ chosenRecipe }) {
+export default function RecipeDetails({
+  chosenRecipe,
+  chosenRecipeInd,
+  recipesStore,
+  addNewRecipe,
+}) {
   const [formPurpose, setFormPurpose] = useState("");
   const [formOpened, setFormOpened] = useState(false);
 
@@ -17,9 +22,11 @@ export default function RecipeDetails({ chosenRecipe }) {
 
   let ingridients;
   let directions;
-  if (chosenRecipe.length === 0) {
+
+  if (Object.keys(chosenRecipe).length === 0) {
     ingridients = "";
     directions = "";
+    console.log("here?");
   } else {
     ingridients = chosenRecipe.ingridients.map((ingridient, ind) => {
       return <li key={ind}>{ingridient}</li>;
@@ -63,6 +70,9 @@ export default function RecipeDetails({ chosenRecipe }) {
         purpose={formPurpose}
         chosenRecipe={chosenRecipe}
         closeForm={closeForm}
+        chosenRecipeInd={chosenRecipeInd}
+        recipesStore={recipesStore}
+        addNewRecipe={addNewRecipe}
       />
     </div>
   );
