@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./list-of-recepes.css";
 
 function ListOfRecepes({ recipesStore, showRecipe }) {

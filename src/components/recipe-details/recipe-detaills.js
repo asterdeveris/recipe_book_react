@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import "./recipe-details.css";
 import Form from "../form/form";
+import { Tooltip } from "react-tooltip";
+import "./recipe-details.css";
 
 export default function RecipeDetails({
   chosenRecipe,
@@ -48,6 +49,9 @@ export default function RecipeDetails({
           <button id="delete" onClick={onDelete}>
             <i className="fa-regular fa-trash-can"></i>
           </button>
+          <Tooltip anchorSelect="#delete" place="top" effect="solid">
+            Delete
+          </Tooltip>
           <button
             id="edit"
             onClick={() => {
@@ -56,9 +60,15 @@ export default function RecipeDetails({
           >
             <i className="fa-regular fa-pen-to-square"></i>
           </button>
+          <Tooltip anchorSelect="#edit" place="top" effect="solid">
+            Edit
+          </Tooltip>
           <button id="add" onClick={() => openForm("Add")}>
             <i className="fa-regular fa-square-plus"></i>
           </button>
+          <Tooltip anchorSelect="#add" place="top" effect="solid">
+            Add
+          </Tooltip>
         </div>
       </div>
       <div className="recipe-directions">

@@ -7,15 +7,11 @@ import { getLocalStorage, setLocalStorage } from "../../services/service";
 
 function App() {
   const [chosenRecipe, setChosenRecipe] = useState({});
-  const [recipesStore, setRecipesStore] = useState([]);
+  const [recipesStore, setRecipesStore] = useState(getLocalStorage());
   const [chosenRecipeInd, setChosenRecipeInd] = useState(null);
 
   useEffect(() => {
-    const recipes = getLocalStorage();
-    if (recipes.length > 0) {
-      setRecipesStore(recipes);
-      setChosenRecipe(recipes[0]);
-    }
+    setChosenRecipe(recipesStore[0]);
   }, []);
 
   useEffect(() => {
