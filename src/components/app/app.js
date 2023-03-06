@@ -11,7 +11,7 @@ function App() {
   const [chosenRecipeInd, setChosenRecipeInd] = useState(null);
 
   useEffect(() => {
-    setChosenRecipe(recipesStore[0]);
+    setChosenRecipe(recipesStore.length > 0 ? recipesStore[0] : {});
   }, []);
 
   useEffect(() => {
