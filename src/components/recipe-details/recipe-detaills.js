@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Form from "../form/form";
 import tooltipCreator from "../../helpers/tooltips/tooltip";
 import "./recipe-details.css";
