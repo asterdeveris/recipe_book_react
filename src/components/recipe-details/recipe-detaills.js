@@ -51,6 +51,7 @@ export default function RecipeDetails({
           {tooltipCreator("Delete", "#delete")}
           <button
             id="edit"
+            disabled={recipesStore.length < 1 ? true : false}
             onClick={() => {
               openForm("Edit");
             }}

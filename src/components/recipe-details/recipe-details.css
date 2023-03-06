@@ -24,6 +24,14 @@
 .recipe-header button i:hover {
   color: #e8522a;
 }
+.recipe-header button:disabled {
+  pointer-events: none;
+}
+
+.recipe-header button:disabled i {
+  pointer-events: none;
+  color: grey;
+}
 
 h2 {
   margin-bottom: 20px;
