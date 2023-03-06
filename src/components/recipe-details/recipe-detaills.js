@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Form from "../form/form";
-import { Tooltip } from "react-tooltip";
+import tooltipCreator from "../../helpers/tooltips/tooltip";
 import "./recipe-details.css";
 
 export default function RecipeDetails({
@@ -22,24 +22,23 @@ export default function RecipeDetails({
     setFormOpened(false);
   };
 
-  let ingridients;
-  let directions;
-
-  if (Object.keys(chosenRecipe).length === 0) {
-    ingridients = "";
-    directions = "";
-  } else {
-    ingridients = chosenRecipe.ingridients.map((ingridient, ind) => {
-      return <li key={ind}>{ingridient}</li>;
-    });
-    directions = chosenRecipe.directions.map((direction, ind) => {
-      return <li key={ind}>{direction}</li>;
-    });
-  }
-
   const onDelete = () => {
     deleteRecipe(chosenRecipeInd);
   };
+
+  const ingridients =
+    Object.keys(chosenRecipe).length === 0
+      ? ""
+      : chosenRecipe.ingridients.map((ingridient, ind) => {
+          return <li key={ind}>{ingridient}</li>;
+        });
+
+  const directions =
+    Object.keys(chosenRecipe).length === 0
+      ? ""
+      : chosenRecipe.directions.map((direction, ind) => {
+          return <li key={ind}>{direction}</li>;
+        });
 
   return (
     <div className="recipe">
@@ -49,9 +48,7 @@ export default function RecipeDetails({
           <button id="delete" onClick={onDelete}>
             <i className="fa-regular fa-trash-can"></i>
           </button>
-          <Tooltip anchorSelect="#delete" place="top" effect="solid">
-            Delete
-          </Tooltip>
+          {tooltipCreator("Delete", "#delete")}
           <button
             id="edit"
             onClick={() => {
@@ -60,15 +57,11 @@ export default function RecipeDetails({
           >
             <i className="fa-regular fa-pen-to-square"></i>
           </button>
-          <Tooltip anchorSelect="#edit" place="top" effect="solid">
-            Edit
-          </Tooltip>
+          {tooltipCreator("Edit", "#edit")}
           <button id="add" onClick={() => openForm("Add")}>
             <i className="fa-regular fa-square-plus"></i>
           </button>
-          <Tooltip anchorSelect="#add" place="top" effect="solid">
-            Add
-          </Tooltip>
+          {tooltipCreator("Add", "#add")}
         </div>
       </div>
       <div className="recipe-directions">

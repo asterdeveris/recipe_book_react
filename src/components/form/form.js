@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./form.css";
 
 export default function Form({
@@ -62,6 +62,7 @@ export default function Form({
         required
         defaultValue={purpose === "Edit" ? name : ""}
       />
+
       <label htmlFor="ingridients">Ingredients</label>
       <textarea
         id="ingridients"
@@ -71,6 +72,7 @@ export default function Form({
         required
         defaultValue={purpose === "Edit" ? ingridients.join("\n") : ""}
       ></textarea>
+
       <label htmlFor="directions">Directions</label>
       <textarea
         id="directions"
@@ -80,9 +82,13 @@ export default function Form({
         required
         defaultValue={purpose === "Edit" ? directions.join("\n") : ""}
       ></textarea>
+
       <div className="form-buttons">
         <input type="submit" value={purpose} />
-        <input type="reset" value="Clean" />
+        <input
+          type="reset"
+          value={purpose === "Edit" ? "Cancel changes" : "Clean"}
+        />
       </div>
     </form>
   );
