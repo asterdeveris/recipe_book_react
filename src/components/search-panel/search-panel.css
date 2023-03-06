@@ -1,0 +1,15 @@
+.search-panel {
+  background-color: #3e726e;
+  border-radius: 5px;
+  margin-left: 7px;
+  height: 30px;
+  padding: 5px 5px 5px 30px;
+  color: white;
+}
+
+.fa-magnifying-glass {
+  position: relative;
+  left: 32px;
+  top: 1px;
+  color: white;
+}

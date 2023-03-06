@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "./form.css";
-import { setLocalStorage, getLocalStorage } from "../../services/service";
 
 export default function Form({
   isOpen,

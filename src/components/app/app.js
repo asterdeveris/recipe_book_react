@@ -45,10 +45,24 @@ function App() {
     showRecipe(recipeName, newStore);
   };
 
+  const searchRecipe = (search) => {
+    const recipe = recipesStore.find((el) =>
+      el.name.toLowerCase().includes(search.toLowerCase())
+    );
+    if (recipe) {
+      setChosenRecipe(recipe);
+    }
+  };
+
   return (
     <div className="app">
       <Header />
-      <ListOfRecepes recipesStore={recipesStore} showRecipe={showRecipe} />
+      <ListOfRecepes
+        recipesStore={recipesStore}
+        showRecipe={showRecipe}
+        searchRecipe={searchRecipe}
+        chosenRecipe={chosenRecipe}
+      />
       <RecipeDetails
         chosenRecipe={chosenRecipe}
         chosenRecipeInd={chosenRecipeInd}
