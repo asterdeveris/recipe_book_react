@@ -44,7 +44,7 @@ i {
   padding: 10px 100px 10px 0;
   margin-bottom: 15px;
   overflow-y: scroll;
-  max-height: 70%;
+  max-height: 400px;
 }
 .recipe-directions ul {
   margin-bottom: 15px;

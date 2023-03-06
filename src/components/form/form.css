@@ -74,3 +74,11 @@
 .hide {
   display: none;
 }
+
+::-webkit-scrollbar-track {
+  background: #c9c9c9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #b4b4b4;
+}
