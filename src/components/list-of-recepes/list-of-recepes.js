@@ -1,6 +1,6 @@
 import React from "react";
 import SearchPanel from "../search-panel/search-panel";
-import "./list-of-recepes.css";
+import "./list-of-recepes.scss";
 
 function ListOfRecepes({
   recipesStore,

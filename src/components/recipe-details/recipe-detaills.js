@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Form from "../form/form";
 import tooltipCreator from "../../helpers/tooltips/tooltip";
-import "./recipe-details.css";
+import "./recipe-details.scss";
 
 export default function RecipeDetails({
   chosenRecipe,

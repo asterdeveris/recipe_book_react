@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./search-panel.css";
+import "./search-panel.scss";
 
 const SearchPanel = ({ searchRecipe }) => {
   const [search, setSearch] = useState("");
