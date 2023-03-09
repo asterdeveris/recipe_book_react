@@ -1,0 +1,104 @@
+@import "../../helpers/scss-mixins/breakpoints.scss";
+.form {
+  z-index: 1;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 15px;
+  background-color: #eee1d1;
+  box-shadow: -1px -1px 41px -11px rgb(23, 60, 52);
+  max-height: 70vh;
+  color: #173c34;
+
+  @include sm {
+    & {
+      width: 100%;
+    }
+  }
+
+  label {
+    margin-bottom: 10px;
+  }
+
+  input,
+  textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    max-width: 100%;
+  }
+
+  .form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    input {
+      padding: 0;
+    }
+
+    .close-button {
+      display: flex;
+      align-items: flex-start;
+      cursor: pointer;
+    }
+  }
+
+  .close {
+    background: none;
+  }
+
+  i {
+    color: #e8522a;
+  }
+
+  .form-buttons {
+    align-self: center;
+
+    input {
+      padding: 7px 15px;
+      margin-left: 5px;
+      font-weight: 600;
+      border-radius: 15px 3px 15px 3px;
+      color: #e8522a;
+      cursor: pointer;
+    }
+
+    :first-child {
+      border: 2px solid #e8522a;
+      background: none;
+      transition-duration: 400ms;
+
+      &:hover {
+        background: #e8522a;
+        color: white;
+      }
+    }
+
+    :nth-child(2) {
+      background: none;
+
+      &:hover {
+        -webkit-text-decoration: underline #e8522a;
+        text-decoration: underline #e8522a;
+        text-underline-offset: 4px;
+      }
+    }
+  }
+}
+
+.hide {
+  display: none;
+}
+
+::-webkit-scrollbar-track {
+  background: #c9c9c9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #b4b4b4;
+}

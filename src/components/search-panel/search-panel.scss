@@ -1,0 +1,45 @@
+@import "../../helpers/scss-mixins/breakpoints.scss";
+
+.search-panel {
+  background-color: #3e726e;
+  border-radius: 5px;
+  margin-left: 7px;
+  height: 30px;
+  padding: 5px 5px 5px 30px;
+  color: white;
+  width: 25%;
+
+  @include lg {
+    & {
+      width: 40%;
+    }
+  }
+
+  @include md {
+    & {
+      margin-left: 0;
+      width: 50%;
+    }
+  }
+
+  @include sm {
+    & {
+      margin-left: -15px;
+      width: 90%;
+    }
+  }
+}
+
+.fa-magnifying-glass {
+  position: relative;
+  left: 32px;
+  top: 1px;
+  color: white;
+  font-size: 1.2rem;
+
+  @include sm {
+    & {
+      left: 10px;
+    }
+  }
+}

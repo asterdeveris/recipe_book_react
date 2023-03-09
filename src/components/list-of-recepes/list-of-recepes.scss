@@ -1,0 +1,66 @@
+@import "../../helpers/scss-mixins/breakpoints.scss";
+.list-of-recepes {
+  background-color: #2a635e;
+  border-radius: 15px;
+  padding: 25px;
+  margin-bottom: 15px;
+  color: white;
+  height: 150px;
+
+  // @include sm {
+  //   .list-of-recepes {
+  //     padding: 25px;
+  //   }
+  // }
+
+  ul {
+    overflow-y: scroll;
+    max-height: 70%;
+
+    li {
+      cursor: pointer;
+      transition-duration: 400ms;
+      transition-timing-function: ease-out;
+      width: fit-content;
+      margin-right: 15px;
+
+      &:hover {
+        -webkit-text-decoration: underline #f86d46;
+        text-decoration: underline #f86d46;
+        text-underline-offset: 4px;
+        padding: 5px 10px;
+        font-size: larger;
+      }
+    }
+  }
+
+  h2 {
+    margin: 0;
+
+    @include md {
+      & {
+        display: none;
+      }
+    }
+  }
+}
+
+.sub-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 15px;
+
+  @include md {
+    & {
+      justify-content: stretch;
+    }
+  }
+}
+
+.highlight {
+  background-color: #f86d46;
+  padding: 4px 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+}
