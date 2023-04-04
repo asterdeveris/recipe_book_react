@@ -10,7 +10,7 @@ const SearchPanel = ({ searchRecipe }) => {
   };
 
   return (
-    <>
+    <div className="search">
       <i className="fa-solid fa-magnifying-glass"></i>
       <input
         type="text"
@@ -18,7 +18,7 @@ const SearchPanel = ({ searchRecipe }) => {
         value={search}
         onChange={onSearchChange}
       />
-    </>
+    </div>
   );
 };
 

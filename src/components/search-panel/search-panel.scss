@@ -1,43 +1,39 @@
 @import "../../helpers/scss-mixins/breakpoints.scss";
 
-.search-panel {
-  background-color: #3e726e;
-  border-radius: 5px;
-  margin-left: 7px;
-  height: 30px;
-  padding: 5px 5px 5px 30px;
-  color: white;
-  width: 25%;
+.search {
+  width: 300px;
+  position: relative;
 
-  @include lg {
-    & {
-      width: 40%;
+  .search-panel {
+    background-color: #3e726e;
+    border-radius: 5px;
+    margin-left: 18px;
+    padding: 6px 6px 6px 38px;
+    color: white;
+    width: 70%;
+
+    @include md {
+      & {
+        margin-left: 0;
+      }
     }
-  }
 
-  @include md {
-    & {
-      margin-left: 0;
-      width: 50%;
-    }
-  }
-
-  @include sm {
-    & {
-      margin-left: -15px;
-      width: 90%;
+    @include sm {
+      & {
+        width: 90%;
+      }
     }
   }
 }
 
 .fa-magnifying-glass {
-  position: relative;
-  left: 32px;
-  top: 1px;
+  position: absolute;
+  left: 30px;
+  top: 5px;
   color: white;
   font-size: 1.2rem;
 
-  @include sm {
+  @include md {
     & {
       left: 10px;
     }

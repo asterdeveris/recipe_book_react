@@ -1,0 +1,35 @@
+.search {
+  width: 300px;
+  position: relative;
+}
+.search .search-panel {
+  background-color: #3e726e;
+  border-radius: 5px;
+  margin-left: 18px;
+  padding: 6px 6px 6px 38px;
+  color: white;
+  width: 70%;
+}
+@media screen and (max-width: 720px) {
+  .search .search-panel {
+    margin-left: 0;
+  }
+}
+@media screen and (max-width: 480px) {
+  .search .search-panel {
+    width: 90%;
+  }
+}
+
+.fa-magnifying-glass {
+  position: absolute;
+  left: 30px;
+  top: 5px;
+  color: white;
+  font-size: 1.2rem;
+}
+@media screen and (max-width: 720px) {
+  .fa-magnifying-glass {
+    left: 10px;
+  }
+}/*# sourceMappingURL=search-panel.css.map */
